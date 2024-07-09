@@ -10,7 +10,7 @@ import AccountsScreen from './pages/AccountsScreen';
 import BillsScren from './pages/BillsScren';
 import GoalsScreen from './pages/GoalsScreen';
 import TransactionsScreen from './pages/TransactionsScreen';
-
+import AddExpense from './pages/AddExpense';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: '/transactions',
     element: <TransactionsScreen></TransactionsScreen>
+  },
+  {
+    path: '/add-expense',
+    element: <AddExpense></AddExpense>
   }
 ]);
 
