@@ -6,6 +6,9 @@
   # Use https://search.nixos.org/packages to find packages
   packages = [
     pkgs.nodejs_20
+    pkgs.sqlite
+    pkgs.pm2
+    pkgs.concurrently
   ];
   # Sets environment variables in the workspace
   env = {};
@@ -17,7 +20,7 @@
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file
       onCreate = {
-        npm-install = "npm ci --no-audit --prefer-offline --no-progress --timing";
+        npm-install = "npm ci --no-audit --prefer-offline --no-progress --timing && cd src/packages/backend && npm ci --no-audit --prefer-offline --no-progress --timing && cd ../frontend && npm ci --no-audit --prefer-offline --no-progress --timing";
       };
       # To run something each time the workspace is (re)started, use the `onStart` hook
     };
@@ -26,7 +29,7 @@
       enable = true;
       previews = {
         web = {
-          command = ["npm" "run" "dev" "--" "--port" "$PORT" "--host" "0.0.0.0"];
+          command = ["npm" "run" "dev:frontend"];
           manager = "web";
         };
       };

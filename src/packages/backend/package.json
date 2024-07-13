@@ -1,0 +1,17 @@
+{
+    "name": "budget-app-backend",
+    "private": true,
+    "version": "0.0.1",
+    "type": "module",
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "sqlite3": "^5.1.7",
+        "express": "^4.19.2"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.21"
+    }
+  }
+  
